@@ -1,0 +1,186 @@
+$txt-color: #1d89e4;
+
+a{
+  color: #444444;
+  &:hover {
+      color: $txt-color;
+  }
+}
+
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%in-b {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+%clearfix {
+  zoom: 1;
+  &:after {
+      clear: both;
+  }
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+}
+
+input[type="text"],
+input[type='radio'],
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  &::-webkit-input-placeholder {
+      color: #999;
+      font-size: inherit;
+  }
+  &:-moz-placeholder {
+      color: #999;
+      font-size: inherit;
+  }
+  &::-moz-placeholder {
+      color: #999;
+      font-size: inherit;
+  }
+  &:-ms-input-placeholder {
+      color: #999;
+      font-size: inherit;
+  }
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  font-family: '微软雅黑';
+}
+
+select {
+  border: none;
+  text-indent: 1em;
+}
+
+option {
+  text-indent: 19px;
+  font-family: '微软雅黑';
+}
+
+input[type='text'],
+select {
+  border: none;
+  text-indent: 1em;
+}
+
+input[type="submit"] {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-size: 100% auto;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.head{
+  padding-top: 7px;
+  padding-bottom: 9px;
+  @extend %clearfix;
+  .head-l{
+    float: left;
+  }
+  .head-r{
+    float: right;
+    ul{
+      @extend %clearfix;
+      padding-top: 25px;
+      li{
+        float: left;
+        a{
+          @extend %in-b;
+          padding: 0 20px;
+          border-right: 1px solid #dddddd;
+          font-size: 18px;
+          line-height: 18px;
+        }
+        &:last-child{
+          a{
+            border-right: none;
+          }
+          
+        }
+      }
+    }
+  }
+}
+
+.banner{
+  width: 100%;
+  // height: 300px;
+  background: url('../images/banner.png') center;
+}
+.types-nav{
+  width: 252px;
+	height: 300px;
+  background-color: #eeeeee;
+  padding: 4px 20px;
+  box-sizing: border-box;
+  .nav-item{
+    padding-top: 14px;
+    border-bottom: 1px solid #dddddd;
+    &:last-child{
+      border-bottom: none;
+    } 
+  }
+  .item-title{
+    .icon{
+      @extend %in-b;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+    h3{
+      @extend %in-b;
+      font-size: 16px;
+      line-height: 16px;
+      color: #444444;
+      font-weight: bold;
+    }
+  }
+  .item-content{
+    padding-top: 18px;
+    ul{
+      @extend %clearfix;
+      margin-right: -14px;
+      li{
+        float: left;
+        a{
+          @extend %in-b;
+          font-size: 12px;
+          line-height: 12px;
+          color: #666666;
+          margin-right: 14px;
+          margin-bottom: 10px;
+          &:hover{
+            color: $txt-color;
+          }
+        }
+      }
+    }
+  }
+}
