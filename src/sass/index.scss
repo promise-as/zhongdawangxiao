@@ -132,7 +132,14 @@ input[type="submit"] {
 .banner {
   width: 100%;
   height: 300px;
-  background: url('../images/banner.png') no-repeat center;
+  //background: url('https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/banner.png') no-repeat center;
+  position: relative;
+  .banner-link{
+    position: absolute;
+    @extend %in-b;
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .types-nav {
@@ -140,16 +147,23 @@ input[type="submit"] {
   height: 300px;
   background-color: #eeeeee;
   padding-left: 8px;
-  padding-top: 10px;
+  padding-top: 6px;
   box-sizing: border-box;
   position: relative;
   float: left;
   .nav-item {
-    padding-top: 10px;
+    padding-top: 12px;
     padding-left: 12px;
     border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
     &:last-child {
       border-bottom: none;
+      &:hover{
+        border-bottom: 1px solid #dddddd;
+      }
+      ul{
+        margin-bottom: 0;
+      }
     }
     &.active {
       background-color: #fff;
@@ -175,19 +189,21 @@ input[type="submit"] {
     }
   }
   .item-content {
-    padding-top: 18px;
-
+    padding-top: 16px;
     ul {
       @extend %clearfix;
       margin-right: -14px;
+      margin-bottom: 3px;
       li {
         float: left;
         a {
           @extend %in-b;
+          width: 74px;
+          @extend %one;
           font-size: 12px;
           line-height: 12px;
           color: #666666;
-          margin-right: 14px;
+          //margin-right: 6px;
           margin-bottom: 10px;
           &:hover {
             color: $txt-color;
@@ -209,8 +225,8 @@ input[type="submit"] {
       padding-top: 20px;
       padding-left: 40px;
       .detail-title {
-        margin-bottom: 20px;
-        span {
+        margin-bottom: 18px;
+        a {
           @extend %in-b;
           height: 34px;
           line-height: 34px;
@@ -219,20 +235,25 @@ input[type="submit"] {
           color: #444444;
           background-color: #daeefe;
           margin-right: 28px;
+          &:hover{
+            color: #ffffff;
+            background-color: $txt-color;
+          }
         }
       }
       ol {
         @extend %clearfix;
         margin-right: -10px;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
         li {
           float: left;
           a {
             @extend %in-b;
-            width: 90px;
-            margin-right: 10px;
-            font-size: 12px;
-            line-height: 12px;
+            width: 130px;
+            @extend %one;
+            margin-right: 6px;
+            font-size: 14px;
+            line-height: 14px;
             color: #666666;
             margin-bottom: 8px;
             span {
@@ -272,7 +293,7 @@ input[type="submit"] {
     position: absolute;
     top: -3px;
     right: -3px;
-    background: url(../images/icon_5.png)
+    background: url('https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/icon_5.png')
   }
   .avatar {
     width: 64px;
@@ -323,7 +344,7 @@ input[type="submit"] {
             #5ea4e7);
     background-blend-mode: normal,
     normal;
-    //box-shadow: 0px 3px 5px 0px rgba(255, 113, 37, 0.48);
+    box-shadow: 0px 3px 5px 0px rgba(255, 113, 37, 0.48);
     box-sizing: border-box;
     border-radius: 17px;
     color: #fff;
@@ -345,6 +366,7 @@ input[type="submit"] {
 
 /* 标题模块 */
 .title-module {
+  width: 100%;
   text-align: center;
   h2 {
     @extend %in-b;
@@ -358,7 +380,7 @@ input[type="submit"] {
     @extend %in-b;
     width: 29px;
     height: 24px;
-    background: url(../images/icon_6.png) no-repeat;
+    background: url('https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/icon_6.png') no-repeat;
   }
 }
 
@@ -368,19 +390,27 @@ input[type="submit"] {
   ul {
     padding-top: 30px;
     @extend %clearfix;
-    margin-right: -40px;
+    margin-left: -10px;
+    margin-right: -20px;
     li {
       width: 214px;
       text-align: center;
       font-size: 14px;
       float: left;
-      margin-right: 33px;
+      margin-right: 12px;
+      padding: 10px;
+      &:hover{
+        box-shadow: 0px 0px 18px 0px
+        rgba(160, 160, 160, 0.3);
+      }
       a {
         img {
           height: 132px;
         }
         span {
           @extend %in-b;
+          width: 100%;
+          @extend %one;
           line-height: 14px;
           padding-top: 12px;
         }
@@ -428,7 +458,8 @@ input[type="submit"] {
   .live-content {
     .content-item {
       @extend %clearfix;
-      margin-right: -28px;
+      margin-left: -10px;
+      margin-right: -18px;
       display: none;
       &.active {
         display: block;
@@ -436,7 +467,12 @@ input[type="submit"] {
       li {
         width: 280px;
         float: left;
-        margin-right: 27px;
+        margin-right: 7px;
+        padding: 10px;
+        &:hover{
+          box-shadow: 0px 0px 18px 0px
+          rgba(160, 160, 160, 0.3);
+        }
       }
       .cover {
 
@@ -492,10 +528,11 @@ input[type="submit"] {
 
 /* 名师 */
 .top-teacher {
+  width: 100%;
   padding-top: 30px;
+  padding-bottom: 42px;
   box-sizing: border-box;
-  height: 476px;
-  background: url("../images/bg_1.png") no-repeat center;
+  background: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/bg_1.png") no-repeat center;
   ul{
     padding-top: 43px;
     text-align: center;
@@ -525,7 +562,8 @@ input[type="submit"] {
         color: #666666;
         font-size: 16px;
         line-height: 16px;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
+        height: 46px;
       }
       .btn-wrap{
         @extend %clearfix;
@@ -576,18 +614,22 @@ input[type="submit"] {
       }
     }
   }
+  .swiper-container{
+    width: 1200px;
+    overflow-x: hidden;
+  }
   .swiper-button-prev{
     left: 0;
-    background-image: url("../images/left-able.png");
+    background-image: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/left-able.png");
     &.swiper-button-disabled{
-      background-image: url("../images/left-disable.png");
+      background-image: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/left-disable.png");
     }
   }
   .swiper-button-next{
     right: 0;
-    background-image: url("../images/right-able.png");
+    background-image: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/right-able.png");
     &.swiper-button-disabled{
-      background-image: url("../images/right-disable.png");
+      background-image: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/right-disable.png");
     }
   }
 }
@@ -703,7 +745,7 @@ input[type="submit"] {
   }
   .content-detail{
     @extend %clearfix;
-    margin-right: -120px;
+    margin-right: -54px;
     display: none;
     &.active {
       display: block;
@@ -720,7 +762,7 @@ input[type="submit"] {
           @extend %in-b;
           width: 14px;
           height: 18px;
-          background: url("../images/icon_12.png") no-repeat;
+          background: url("https://img.thea.cn/public/platform/thea/201908/hbj/zdwx/images/icon_12.png") no-repeat;
           margin-left: 8px;
         }
       }
@@ -737,6 +779,7 @@ input[type="submit"] {
           a{
             @extend %in-b;
             width: 250px;
+            @extend %one;
             font-size: 14px;
             line-height: 14px;
             &:hover{
